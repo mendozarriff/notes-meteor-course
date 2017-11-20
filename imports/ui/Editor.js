@@ -10,7 +10,7 @@ export class Editor extends React.Component{
     constructor (props){
         super(props);
         this.state = {
-            title: ' ',
+            title: '',
             body: ''
         }
     }
@@ -34,7 +34,7 @@ export class Editor extends React.Component{
 
     componentDidUpdate(prevProps, prevState){
         const currentNoteId = this.props.note ? this.props.note._id : undefined;
-        const prevNoteId = prevProps.note ? prevProps.note_id : undefined;
+        const prevNoteId = prevProps.note ? prevProps.note._id : undefined;
 
         if(currentNoteId && currentNoteId !== prevNoteId){
             this.setState({
